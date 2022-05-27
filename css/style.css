@@ -106,6 +106,9 @@ ul {
   font-weight: 500;
   letter-spacing: 0.02em;
   line-height: 1.14;
+  transition-property: color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .header-list {
@@ -136,6 +139,13 @@ ul {
 .nav-link {
   padding-top: 35px;
   padding-bottom: 35px;
+  transition-property: color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+.nav-link:hover,
+.nav-link:focus {
+  color: var(--brandblue);
 }
 
 .nav-link.current {
@@ -159,20 +169,6 @@ ul {
 
 .contact-item .contact-link {
   padding: 32px 0;
-}
-
-.nav-link:hover,
-.nav-link:focus {
-  color: var(--brandblue);
-}
-
-.contact-link:hover,
-.contact-link:focus {
-  color: var(--brandblue);
-}
-.contact-link:hover > .contact-icon,
-.contact-link:focus > .contact-icon {
-  fill: var(--brandblue);
 }
 
 .hero-section {
@@ -213,6 +209,9 @@ ul {
   line-height: 1.87;
   letter-spacing: 0.06em;
   border: none;
+  transition-property: background-color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .hero-button:hover,
 .hero-button:focus {
@@ -292,11 +291,33 @@ ul {
   margin-right: 30px;
 }
 
-/* .section-list-item :not(:last-child){
-    margin-right:30px;
+.section-list-item {
+  position: relative;
+}
+/* .section-list-item::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 70px;
+  bottom: 0;
+  background: rgba(47, 48, 58, 0.8);
 } */
+.our-business {
+  display: flex;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 70px;
+  background-color: rgba(47, 48, 58, 0.8);
+}
+.our-business-title {
+  display: flex;
+  color: #ffffff;
+  text-align: center;
+  align-items: center;
+  margin: 0 auto;
+}
 
-/* Картинки в секции чем мы занимаемся */
 .img {
   display: block;
 }
@@ -357,12 +378,12 @@ ul {
   height: 44px;
   justify-content: center;
   align-items: center;
-}
-.item-social:not(:last-child) {
-  margin-right: 10px;
-}
-.icon-team {
-  fill: #afb1b8;
+  outline-style: none;
+  border-style: none;
+  border-radius: 50%;
+  transition-property: background-color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .link-socials:hover,
 .link-socials:focus {
@@ -374,6 +395,13 @@ ul {
 .link-socials:hover .icon-team,
 .link-socials:focus .icon-team {
   fill: #ffffff;
+}
+
+.item-social:not(:last-child) {
+  margin-right: 10px;
+}
+.icon-team {
+  fill: #afb1b8;
 }
 
 .clients-list {
@@ -389,21 +417,26 @@ ul {
   align-items: center;
   border: 1px solid #afb1b8;
   border-radius: 2px;
+  transition-property: border-color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+.clients-icon {
+  transition-property: fill;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .clients-item:not(:last-child) {
   margin-right: 30px;
 }
 
-.clients-link:hover {
+.clients-link:hover,
+.clients-link:focus {
   border-color: var(--brandblue);
 }
 .clients-link:hover .clients-icon {
   fill: var(--brandblue);
-}
-.clients-link:focus {
-  outline-style: none;
-  border-color: var(--brandblue);
 }
 .clients-link:focus .clients-icon {
   fill: #188ce8;
@@ -475,6 +508,9 @@ ul {
   line-height: 1.62;
   padding: 6px 22px;
   border: none;
+  transition-property: color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .filter.active {
   color: white;
@@ -542,4 +578,13 @@ ul {
   border-bottom: 1px solid #eee;
   border-left: 1px solid #eee;
   border-right: 1px solid #eee;
+}
+/* Ховер-фокус для панели в навигации хедера и футера */
+.contact-link:hover,
+.contact-link:focus {
+  color: var(--brandblue);
+}
+.contact-link:hover > .contact-icon,
+.contact-link:focus > .contact-icon {
+  fill: var(--brandblue);
 }
