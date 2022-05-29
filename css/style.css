@@ -567,9 +567,7 @@ ul {
   --indent: 30px;
   justify-content: space-between;
 }
-.filter-list-item:hover {
-  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.423);
-}
+
 .filter-button-item:not(:last-child) {
   margin-right: 8px;
 }
@@ -579,6 +577,40 @@ ul {
   border-left: 1px solid #eee;
   border-right: 1px solid #eee;
 }
+.submenu {
+  position: relative;
+  background-color: rgba(33, 150, 243, 0.9);
+  overflow: hidden;
+}
+.submenu-img {
+  display: block;
+}
+.submenu-description {
+  position: absolute;
+  left: 0;
+  top: 100%;
+  width: 100%;
+  transform: translateY(0);
+  padding: 63px 24px;
+  font-size: 18px;
+  line-height: 1.5;
+  text-align: left;
+  letter-spacing: 0.03em;
+  color: #ffffff;
+  background-color: rgba(33, 150, 243, 0.9);
+
+  transition-property: transform;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.filter-list-item:hover {
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.423);
+}
+.filter-list-item:hover .submenu-description {
+  transform: translateY(-100%);
+}
+
 /* Ховер-фокус для панели в навигации хедера и футера */
 .contact-link:hover,
 .contact-link:focus {
@@ -620,6 +652,9 @@ ul {
   background-color: #ffffff;
   border-radius: 50%;
   border-color: rgba(0, 0, 0, 0.1);
+  transition-property: background-color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .modal-button:hover,
 .modal-button:focus {
@@ -628,6 +663,9 @@ ul {
 }
 
 .icon-modal {
+  transition-property: fill;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .modal-button:hover .icon-modal,
 .modal-button:focus .icon-modal {
